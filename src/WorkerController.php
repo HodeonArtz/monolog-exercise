@@ -45,5 +45,6 @@ try {
 } catch (mysqli_sql_exception $e) {
     //  write error message with "Error connection db: + details parameters config"
     //TODO
+    $log->error("Error connection db: + details parameters config");
 }
 echo "steps executed correctly: " . $steps;
