@@ -7,6 +7,7 @@ use Monolog\Level;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
+
 // create log
 $log = new Logger("LogWorkerDB");
 // define logs location
@@ -18,7 +19,9 @@ $log->pushHandler(new StreamHandler("../logs/WorkerDB.log", Level::Error));
 ++$steps;
 
 try {
-    $mysqli = new mysqli($db["host"], $db["user"], $db["pwd"], $db["db_name"]); //4 db
+  $db = parse_ini_file("../conf/miConf.ini",true)["params_db_sql"];
+
+    $mysqli = new mysqli(hostname: $db["host"], $db["user"], $db["pwd"], $db["db_name"]); //4 db
     // write info message with "Connection successfully"
     //TODO
     ++$steps;
