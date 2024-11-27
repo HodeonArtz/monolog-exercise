@@ -1,0 +1,19 @@
+{
+    "name": "hodeo/monolog-exercise",
+    "description": "Exercise to practice monolog",
+    "type": "project",
+    "license": "free",
+    "autoload": {
+        "psr-4": {
+            "Hodeo\\MonologExercise\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "HodeonArtz",
+            "email": "martidicianolold@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
