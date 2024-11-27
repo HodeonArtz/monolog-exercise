@@ -11,7 +11,7 @@ use Monolog\Handler\StreamHandler;
 // create log
 $log = new Logger("LogWorkerDB");
 // define logs location
-$log->pushHandler(new StreamHandler("../logs/WorkerDB.log", Level::Error)); 
+$log->pushHandler(new StreamHandler("../logs/WorkerDB.log", Level::Info)); 
 ++$steps;
 
 //ddbb connection, read from miConf.ini
@@ -25,6 +25,7 @@ try {
     $mysqli = new mysqli(hostname: $db["host"],username: $db["user"],password: $db["pwd"], database:$db["db_name"]); //4 db
     // write info message with "Connection successfully"
     //TODO
+    $log->info("Connection successfully");
     ++$steps;
 
     // Create operation
@@ -35,6 +36,7 @@ try {
         $result = $mysqli->query($sql_sentence);
         // write info message with "Record inserted successfully"
         //TODO
+        $log->info("Record inserted successfully");
         ++$steps;
     } catch (mysqli_sql_exception $e) {
         //  write error message with "Error inserting a record"
