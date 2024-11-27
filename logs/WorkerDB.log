@@ -1,3 +1,5 @@
 [2024-11-27T19:46:09.666140+01:00] LogWorkerDB.INFO: Connection successfully [] []
 [2024-11-27T19:46:09.671518+01:00] LogWorkerDB.INFO: Record inserted successfully [] []
 [2024-11-27T19:50:00.070739+01:00] LogWorkerDB.ERROR: Error connection db: + details parameters config [] []
+[2024-11-27T19:52:04.963550+01:00] LogWorkerDB.INFO: Connection successfully [] []
+[2024-11-27T19:52:04.966360+01:00] LogWorkerDB.ERROR: Error inserting a record [] []
