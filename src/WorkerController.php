@@ -16,12 +16,13 @@ $log->pushHandler(new StreamHandler("../logs/WorkerDB.log", Level::Error));
 
 //ddbb connection, read from miConf.ini
 //TODO
+$db = parse_ini_file("../conf/miConf.ini",true)["params_db_sql"];
 ++$steps;
 
 try {
-  $db = parse_ini_file("../conf/miConf.ini",true)["params_db_sql"];
 
-    $mysqli = new mysqli(hostname: $db["host"], $db["user"], $db["pwd"], $db["db_name"]); //4 db
+
+    $mysqli = new mysqli(hostname: $db["host"],username: $db["user"],password: $db["pwd"], database:$db["db_name"]); //4 db
     // write info message with "Connection successfully"
     //TODO
     ++$steps;
